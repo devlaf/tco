@@ -1,2 +1,13 @@
 # tail-calls
-tail call optimization at runtime using ... trampolines?
+
+### About
+JAVA doesn't do tail-call optimization on recursive operations. But, with a little java 8 and some closures, we can kinda hack it together at runtime. 
+
+This is for funsies, and it goes without saying that if you're writing production code, and you're using java, you should probably just be boring and do all that crap iteratively rather than relying on something like this.
+
+### Usage
+Really this just involves definine your recursive func as a [RuntimeOptimizedTailCall](TailCallOptimization/src/main/java/com/devlaf/tailcalloptimization/RuntimeOptimizedTailCall.java) using the constructor there. At that point, you can call the `getResult()` method to execute the computation. See javadocs for explanations of how to construct the `RuntimeOptimizedTailCall`.
+
+
+### Example
+See example code [here](TailCallOptimizationExample/src/main/java/com/devlaf/tailcalloptimization/App.java)
