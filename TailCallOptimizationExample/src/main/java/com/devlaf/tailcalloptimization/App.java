@@ -1,5 +1,7 @@
 package com.devlaf.tailcalloptimization;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
 public class App
 {
     public static void main( String[] args )
@@ -8,11 +10,11 @@ public class App
     }
 
     public static int fibonacci(int val) {
-        RuntimeOptimizedTailCall<Pair<Integer, Integer>, Integer> recursiveExecutor = new RuntimeOptimizedTailCall<>(
-                new Pair<>(1, val),
-                x -> x.getSecond().intValue() == 1,
-                x -> x.getFirst(),
-                x -> new Pair<>(x.getFirst() * x.getSecond(), x.getSecond() - 1)
+        RuntimeOptimizedTailCall<ImmutablePair<Integer, Integer>, Integer> recursiveExecutor = new RuntimeOptimizedTailCall<>(
+                new ImmutablePair<>(1, val),
+                x -> x.getRight().intValue() == 1,
+                x -> x.getLeft(),
+                x -> new ImmutablePair<>(x.getLeft() * x.getRight(), x.getRight() - 1)
         );
 
         return recursiveExecutor.getResult();
