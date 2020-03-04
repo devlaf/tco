@@ -9,9 +9,9 @@ public class App
         System.out.println( "fibonacci(7) = " + fibonacci(7) );
     }
 
-    public static int fibonacci(int val) {
-        RuntimeOptimizedTailCall<ImmutablePair<Integer, Integer>, Integer> recursiveExecutor = new RuntimeOptimizedTailCall<>(
-                new ImmutablePair<>(1, val),
+    public static long fibonacci(int val) {
+        RuntimeOptimizedTailCall<ImmutablePair<Long, Integer>, Long> recursiveExecutor = new RuntimeOptimizedTailCall<>(
+                new ImmutablePair<>(1L, val),
                 x -> x.getRight().intValue() == 1,
                 x -> x.getLeft(),
                 x -> new ImmutablePair<>(x.getLeft() * x.getRight(), x.getRight() - 1)
