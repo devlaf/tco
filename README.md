@@ -3,6 +3,9 @@
 ### About
 JAVA doesn't do tail-call optimization on recursive operations. But, with a little java 8 and some closures, we can kinda hack it together at runtime. 
 
+There are some more comprehensive libraries out there for adding functional goodies to java that do similar things for TCO along with much more (see [aol/cyclops](https://github.com/aol/cyclops) for instance.) This package simply does the one thing.
+
+### Disclaimer
 This is for funsies, and it goes without saying that if you're writing production code, and you're using java, you should probably just be boring and do all that crap iteratively rather than relying on something like this.
 
 ### Usage
