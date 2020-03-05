@@ -1,4 +1,4 @@
-# tail-calls
+# TCO
 
 ### About
 JAVA doesn't do tail-call optimization on recursive operations. But, with a little java 8 and some closures, we can kinda hack it together at runtime. 
